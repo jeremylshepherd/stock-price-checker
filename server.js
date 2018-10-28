@@ -13,14 +13,6 @@ var runner            = require('./test-runner');
 
 var app = express();
 
-app.use((req, res, next) => {
-    let meth = req.method;
-    let path = req.path;
-    let ip = req.ip;
-    console.log(`${meth} ${path}`);
-    next();
-});
-
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(cors({origin: '*'})); //For FCC testing purposes only
@@ -29,12 +21,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 
-// app.use(helmet.contentSecurityPolicy({
-//   directives: {
-//     defaultSrc: ["'self'"],
-//     styleSrc: ["'self'"]
-//   }
-// }));
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    styleSrc: ["'self'"]
+  }
+}));
 
 mongoose.connect(
     process.env.MONGODB_URI,
