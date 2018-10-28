@@ -1,3 +1,5 @@
+'use strict';
+
 const aSink = require('async');
 const getStockPrice = require('./getStockPrice');
 

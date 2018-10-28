@@ -1,3 +1,5 @@
+'use strict';
+
 function StockHandler() {
     console.log(`Passing the "none requiered" unit test`);
 }

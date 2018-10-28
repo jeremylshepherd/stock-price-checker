@@ -1,3 +1,5 @@
+'use strict';
+
 const Stock = require('../models/Stocks');
 const getStockPrice = require('./getStockPrice');
 const compareLikes = require('./compareLikes');
