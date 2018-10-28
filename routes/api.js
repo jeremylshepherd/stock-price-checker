@@ -10,10 +10,8 @@
 
 const getStocks = require('../controllers/getStocks');
 
-module.exports = function (app) {
-  
-  app.route('/api/stock-prices')
-    .get(function (req, res){
-      getStocks(req, res);
-    });    
+module.exports = function(app) {
+    app.route('/api/stock-prices').get(function(req, res) {
+        getStocks(req, res);
+    });
 };
